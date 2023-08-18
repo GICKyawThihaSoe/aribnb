@@ -1,0 +1,61 @@
+import photo from '../assets/photo1.svg';
+
+const testimonials = [
+  {
+    id: 1,
+    soldout:"sold out",
+    num:"5.0",
+    nam:"6",
+    country:"USA",
+    text:"Life lessons with Katie Zaferes",
+    cost:"From $136",
+    person:"person",
+    image: photo,
+  },
+  {
+    id: 2,
+    soldout:"sold out",
+    num:"5.0",
+    nam:"6",
+    country:"USA",
+    text:"Life lessons with Katie Zaferes",
+    cost:"From $136",
+    person:"person",
+    image: photo,
+  },
+  {
+    id: 3,
+    soldout:"sold out",
+    num:"5.0",
+    nam:"6",
+    country:"USA",
+    text:"Life lessons with Katie Zaferes",
+    cost:"From $136",
+    person:"person",
+    image: photo,
+  },
+  {
+    id: 4,
+    soldout:"sold out",
+    num:"5.0",
+    nam:"6",
+    country:"USA",
+    text:"Life lessons with Katie Zaferes",
+    cost:"From $136",
+    person:"person",
+    image: photo,
+  },
+  {
+    id: 5,
+    soldout:"sold out",
+    num:"5.0",
+    nam:"6",
+    country:"USA",
+    text:"Life lessons with Katie Zaferes",
+    cost:"From $136",
+    person:"person",
+    image: photo,
+  },
+];
+
+export default testimonials;

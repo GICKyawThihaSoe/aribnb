@@ -2,8 +2,23 @@ import React from "react";
 import banner from "../assets/bg.svg";
 import pt1 from "../assets/photo1.svg";
 import star from "../assets/star.svg";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Card from "./Card";
+import data from "../data/data";
+
 
 const Main = () => {
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+  };
   return (
     <>
       <div className="p-10">
@@ -21,70 +36,23 @@ const Main = () => {
             </p>
           </div>
           <div className="mt-16">
-            <div className="flex justify-between">
-              <div>
-                <div className="relative">
-                  <img src={pt1} alt="" />
-                  <p
-                    className="uppercase absolute p-1 rounded-sm left-1 text-black2 font-medium top-1 bg-white"
-                    style={{ fontSize: "10px" }}
-                  >
-                    sold out
-                  </p>
+            <Slider {...settings}>
+              {data.map((data) => (
+                <div key={data.id}>
+                  <Card
+                    soldout={data.soldout}
+                    num={data.num}
+                    nam={data.nam}
+                    country={data.country}
+                    text={data.text}
+                    cost={data.cost}
+                    person={data.person}
+                    image={data.image}
+                    star={star}
+                  />
                 </div>
-                <div>
-                  <div className="flex items-center mt-1">
-                    <img src={star} alt="" />
-                    <p className="text-sm">
-                      5.0 <span style={{ color: "#918E9B" }}>(6)</span>
-                      <span style={{ color: "#918E9B" }}>.USA</span>
-                    </p>
-                  </div>
-                  <div className="mt-1">
-                    <p className="text-sm" style={{ color: "#222222" }}>
-                      Life lessons with Katie Zaferes
-                    </p>
-                  </div>
-                  <div className="mt-1">
-                    <p className="text-sm">
-                      <span className="font-bold">From $136</span>
-                      <span style={{ color: "#222222" }}>/ person</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div className="relative">
-                  <img src={pt1} alt="" />
-                  <p
-                    className="uppercase absolute p-1 rounded-sm left-1 text-black2 font-medium top-1 bg-white"
-                    style={{ fontSize: "10px" }}
-                  >
-                    sold out
-                  </p>
-                </div>
-                <div>
-                  <div className="flex items-center mt-1">
-                    <img src={star} alt="" />
-                    <p className="text-sm">
-                      5.0 <span style={{ color: "#918E9B" }}>(6)</span>
-                      <span style={{ color: "#918E9B" }}>.USA</span>
-                    </p>
-                  </div>
-                  <div className="mt-1">
-                    <p className="text-sm" style={{ color: "#222222" }}>
-                      Life lessons with Katie Zaferes
-                    </p>
-                  </div>
-                  <div className="mt-1">
-                    <p className="text-sm">
-                      <span className="font-bold">From $136</span>
-                      <span style={{ color: "#222222" }}>/ person</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+              ))}
+            </Slider>
           </div>
         </div>
       </div>
